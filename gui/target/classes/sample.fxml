@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<GridPane alignment="TOP_RIGHT" hgap="10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" translateX="1.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+    </rowConstraints>
+    <children>
+        <TextField fx:id="badHabits" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <CheckBox fx:id="genderFemale" alignment="CENTER_RIGHT" mnemonicParsing="false" text="Female" translateX="55.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <CheckBox fx:id="genderMale" mnemonicParsing="false" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Button mnemonicParsing="false" onMouseClicked="#addAnimal" text="Add animal" GridPane.rowIndex="4" />
+        <ChoiceBox fx:id="species" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" value="Dog">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Cat" />
+                    <String fx:value="Dog" />
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+        <TextField fx:id="name" GridPane.columnIndex="1" />
+        <Label text="Species" GridPane.rowIndex="1" />
+        <Label text="Name" />
+        <Label text="Bad habits" GridPane.rowIndex="3" />
+        <Label text="Gender" GridPane.rowIndex="2" />
+        <Label text="Animals" translateX="25.0" translateY="-70.0" GridPane.columnIndex="2" />
+        <Label text="Reserve animals" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Label text="Name" translateX="52.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <Button mnemonicParsing="false" onMouseClicked="#reserveAnimal" text="Reserve selected animals" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+        <ListView fx:id="animalList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" />
+        <TextField fx:id="reserverName" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+    </children>
+</GridPane>
