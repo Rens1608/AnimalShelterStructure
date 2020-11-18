@@ -1,5 +1,6 @@
 import Animals.Dog;
 import Animals.Gender;
+import Animals.Species;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,14 +13,14 @@ public class DogTest {
 
     @BeforeEach
     public void testInitialize(){
-        dog = new Dog( Gender.Male, "Sgt. Woof");
+        dog = new Dog( Gender.Male, "Sgt. Woof", 0, Species.Dog);
     }
 
     @Test
     public void testConstructor(){
-        Assertions.assertEquals("Sgt. Woof", dog.Name);
-        Assertions.assertEquals(Gender.Male, dog.Gender);
-        Assertions.assertNull(dog.ReservedBy);
+        Assertions.assertEquals("Sgt. Woof", dog.getName());
+        Assertions.assertEquals(Gender.Male, dog.getGender());
+        Assertions.assertNull(dog.getReservedBy());
         Assertions.assertEquals(LocalDateTime.now().getDayOfMonth() , dog.LastWalk);
         Assertions.assertFalse(dog.NeedsWalk());
     }
@@ -27,10 +28,10 @@ public class DogTest {
     @Test
     public void TestReservation()
     {
-        Assertions.assertNull(dog.ReservedBy);
+        Assertions.assertNull(dog.getReservedBy());
         Assertions.assertTrue(this.dog.Reserve("John Doe"));
-        Assertions.assertNotNull(this.dog.ReservedBy);
-        Assertions.assertEquals("John Doe", this.dog.ReservedBy.Name);
+        Assertions.assertNotNull(this.dog.getReservedBy());
+        Assertions.assertEquals("John Doe", this.dog.getReservedBy().Name);
         Assertions.assertFalse(this.dog.Reserve("Jane Doe"));
     }
 }

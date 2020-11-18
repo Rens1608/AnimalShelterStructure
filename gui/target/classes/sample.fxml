@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
 <GridPane alignment="TOP_RIGHT" hgap="10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" translateX="1.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <columnConstraints>
         <ColumnConstraints />
@@ -14,6 +14,9 @@
         <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
         <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
         <ColumnConstraints />
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints />
     </columnConstraints>
     <rowConstraints>
         <RowConstraints />
@@ -27,7 +30,7 @@
         <CheckBox fx:id="genderFemale" alignment="CENTER_RIGHT" mnemonicParsing="false" text="Female" translateX="55.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <CheckBox fx:id="genderMale" mnemonicParsing="false" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <Button mnemonicParsing="false" onMouseClicked="#addAnimal" text="Add animal" GridPane.rowIndex="4" />
-        <ChoiceBox fx:id="species" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" value="Dog">
+        <ChoiceBox fx:id="species" prefWidth="150.0" value="Dog" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Cat" />
@@ -46,5 +49,14 @@
         <Button mnemonicParsing="false" onMouseClicked="#reserveAnimal" text="Reserve selected animals" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="2" />
         <ListView fx:id="animalList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" />
         <TextField fx:id="reserverName" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <ListView fx:id="itemList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.columnSpan="2" />
+      <Label alignment="CENTER" text="Items" translateX="20.0" translateY="-70.0" GridPane.columnIndex="7" />
+      <Button mnemonicParsing="false" onMouseClicked="#buy" text="Buy" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onMouseClicked="#setItemForSale" text="Add to webshop" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+      <Label text="Name" GridPane.columnIndex="5" />
+      <Label text="Price" translateY="40.0" GridPane.columnIndex="5" />
+      <TextField fx:id="itemName" GridPane.columnIndex="6" />
+      <TextField fx:id="price" translateY="40.0" GridPane.columnIndex="6" />
+      <Button mnemonicParsing="false" onMouseClicked="#setAnimalForSale" text="Add to webshop" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3" />
     </children>
 </GridPane>

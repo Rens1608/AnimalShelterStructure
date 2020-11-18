@@ -1,9 +1,11 @@
 package Animals;
 
 public class Cat extends Animal {
+
     public String BadHabits;
-    public Cat(Animals.Gender gender, String name, String badHabits) {
-        super(gender, name);
+
+    public Cat(Animals.Gender gender, String name, String badHabits, double price, Species species) {
+        super(gender, name, price, species);
         BadHabits = badHabits;
     }
 
@@ -17,6 +19,6 @@ public class Cat extends Animal {
 
     @Override
     public String toString() {
-        return super.toString() + " BadHabits='" + BadHabits +"'";
+        return super.toString() + " BadHabits='" + BadHabits + "Price = " + getPrice();
     }
 }
